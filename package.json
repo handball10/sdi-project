@@ -16,10 +16,25 @@
   "bugs": {
     "url": "https://github.com/handball10/sdi/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.8.1",
+    "compression": "^1.1.0",
+    "cors": "^2.5.0",
+    "cron": "*",
+    "express": "^4.9.0",
+    "lodash": "*",
+    "nconf": "*",
+    "q": "^2.0.2",
+    "tv4": "^1.1.4",
+    "validator": "^3.18.0",
+    "winston": "*",
+    "nedb": "^0.10.11",
+    "xml" : "^1.0.1",
+    "node-uuid" : "*"
+  },
   "devDependencies": {
 
-
+    "grunt-nodemon" : "^0.4.2",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-watch": "^0.6.1",
     "grunt": "^0.4.5",

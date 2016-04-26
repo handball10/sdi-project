@@ -38,6 +38,11 @@ module.exports = function (grunt) {
           nospawn: true
         }
       }
+    },
+    nodemon: {
+      dev: {
+        script: 'index.js'
+      }
     }
   });
 
@@ -45,7 +50,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha-cli');
+  grunt.loadNpmTasks('grunt-nodemon');
   grunt.registerTask('test', ['complexity', 'jshint', 'mochacli', 'watch']);
   grunt.registerTask('ci', ['complexity', 'jshint', 'mochacli']);
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('default', ['nodemon']);
 };
