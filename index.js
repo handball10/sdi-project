@@ -11,8 +11,8 @@ var express = require('express'),
     compress = require('compression'),
     nconf = require('nconf'),
     Q = require('q'),
-    Router = require('./lib/router/rest/main.js')
-
+    Router = require('./lib/router/rest/main.js'),
+    helmet = require('helmet')
 ;
 
 // instantiate express router
@@ -41,6 +41,8 @@ app.disable('x-powered-by');
 // Parsing JSON
 app.use(bodyParser.json({strict: true}));
 
+app.use(helmet());
+
 
 Q().then(function(){
     // Start the HTTP-server
@@ -49,6 +51,7 @@ Q().then(function(){
     var router = new Router();
 
     app.use('/xml', router.xml);
+    app.use('/authenticate', router.authenticate);
 
     //app.use('/api', router.validateRequest);
     //app.use('/api', router.performGateway);
