@@ -1,11 +1,11 @@
 {
   "name": "sdi",
-  "version": "1.0.0",
+  "version": "0:0:1",
   "description": "SDI REST",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/grunt ci",
-    "start": "index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -29,9 +29,9 @@
     "tv4": "^1.1.4",
     "validator": "^3.18.0",
     "winston": "*",
-    "nedb": "^0.10.11",
     "xml" : "^1.0.1",
     "helmet" : "^1.3.0",
+    "nedb" : "^1.8.0",
     "node-uuid" : "*"
   },
   "devDependencies": {
