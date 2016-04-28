@@ -46,7 +46,7 @@ app.use(helmet());
 
 Q().then(function(){
     // Start the HTTP-server
-    app.listen(nconf.get('http:port'), nconf.get('http:ip'));
+    app.listen(process.env.PORT || nconf.get('http:port'), nconf.get('http:ip'));
 
     var router = new Router();
 
