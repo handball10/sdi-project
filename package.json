@@ -4,7 +4,8 @@
   "description": "SDI REST",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/grunt ci"
+    "test": "node_modules/.bin/grunt ci",
+    "start": "index.js"
   },
   "repository": {
     "type": "git",
