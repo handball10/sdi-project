@@ -1,6 +1,6 @@
 {
   "name": "sdi",
-  "version": "0:0:1",
+  "version": "0.0.1",
   "description": "SDI REST",
   "main": "index.js",
   "scripts": {
