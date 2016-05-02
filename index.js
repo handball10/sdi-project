@@ -49,6 +49,12 @@ Q().then(function(){
     app.listen(process.env.PORT || nconf.get('http:port'), nconf.get('http:ip'));
 
     var router = new Router();
+    //
+    //app.use('',function(req, res, next){
+    //    res.sendJSON({
+    //        success : true
+    //    }).end();
+    //});
 
     app.use('/xml', router.xml);
     app.use('/authenticate', router.authenticate);
