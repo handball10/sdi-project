@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "SDI REST",
   "main": "index.js",
+  "engines" : {
+    "node" : "5.3.0"
+  },
   "scripts": {
     "test": "node_modules/.bin/grunt ci",
     "start": "node index.js"
