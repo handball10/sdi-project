@@ -4,5 +4,8 @@
     "ip": "0.0.0.0",
     "port": 3000,
     "allowedOrigins": ["*"]
+  },
+  "security" : {
+    "apiKey" : "e30ecf1c-0184-4b65-b458-a41e187da9b6"
   }
 }

@@ -11,8 +11,10 @@ var express = require('express'),
     compress = require('compression'),
     nconf = require('nconf'),
     Q = require('q'),
-    Router = require('./lib/router/rest/main.js'),
-    helmet = require('helmet')
+    Router = require('./lib/router/rest/main'),
+    helmet = require('helmet'),
+    database = require('./lib/database/collection'),
+    Model = require('./lib/model/index')
 ;
 
 // instantiate express router
@@ -44,20 +46,20 @@ app.use(bodyParser.json({strict: true}));
 app.use(helmet());
 
 
-Q().then(function(){
+database.connect()
+.then(function(){
+
+    var model = new Model(database);
+    var router = new Router(model);
+
+    app.use('/:api', router.validator);
+    app.use('/:api/session', router.session);
+    app.use('/:api/xml', router.xml);
+    app.use('/:api/authenticate', router.authenticate);
+
+
     // Start the HTTP-server
     app.listen(process.env.PORT || nconf.get('http:port'), nconf.get('http:ip'));
-
-    var router = new Router();
-    //
-    //app.use('',function(req, res, next){
-    //    res.sendJSON({
-    //        success : true
-    //    }).end();
-    //});
-
-    app.use('/xml', router.xml);
-    app.use('/authenticate', router.authenticate);
 
     //app.use('/api', router.validateRequest);
     //app.use('/api', router.performGateway);
