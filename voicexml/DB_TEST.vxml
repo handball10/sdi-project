@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://www.w3.org/2001/vxml 
+   http://www.w3.org/TR/voicexml21/vxml.xsd"
+   version="2.1" xml:lang="de-DE">
+
+<!--
+=========================================================================
+  lecture5.vxml: Multi-Dokumenten Dialog mit dynamischer VXML-Generierung
+                 via JSP
+               + Überprüfung der Kundennummer
+               + Danach geht er Dialog in greeting.vxml und dort in eine
+                 Form, die davon abhängt, ob Kundennummer bekannt oder 
+                 nicht. 
+=========================================================================
+-->
+
+
+		
+  <form id="test_nr">
+
+
+			<block>
+			
+
+				 
+				<prompt bargein="false">
+					willkommen im D B test.
+				</prompt>
+				
+			</block>
+
+  <block name="block3">
+
+	  <var name="testVar" expr="'neu'"/>
+	  <var name="testVar2" expr="'neu2'"/>
+
+				
+				<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="testVar testVar2"/>
+          <prompt bargein="false">Das ist <value expr="doit.test"/> und: <value expr="doit.test2" />. Okay, das war alles. </prompt>
+
+    </block>
+
+
+				
+				
+  </form>
+</vxml>
+

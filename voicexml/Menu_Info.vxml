@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
+
+
+
+<form id="info_menu">
+		
+		
+		
+<field name="date">
+			
+				<prompt bargein="false">
+					Nennen Sie bitte einen Tag und einen Monat.
+				</prompt>
+				
+<grammar src="Lectures1.agl#Zahlen3"/>
+
+
+		
+				<filled>
+					<prompt>
+						Sie haben
+						<value expr="date"/>gewählt.
+						
+					</prompt>
+					
+					
+					
+				</filled>
+			</field>
+
+<block>
+						<assign name="MENSA_DATE" expr="date" />
+</block>
+
+		<block>
+			<goto next="GetMensaInfo.vxml#MensaInfo"/>
+		</block>
+
+
+</form> 
+
+
+
+	
+	</vxml>
+	

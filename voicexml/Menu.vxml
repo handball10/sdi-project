@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
+
+
+		<menu id="main_menu">
+	
+
+			
+		<prompt bargein="false">Sie befinden sich im Hauptmenü:</prompt>
+		<prompt bargein="true"> zur mensaauskunft drücke die Taste 1 oder sag: Mensa!</prompt>
+		<prompt bargein="true"> zur kursauskunft drücke die Taste 2 oder sag: Kurs!
+				 </prompt>
+				 
+				 
+		<choice dtmf="1" next="#choice1">
+			mensa
+		</choice>
+		<choice dtmf="2" next="#choice2">
+			Kurs
+		</choice>
+
+
+
+
+	</menu>
+			
+			
+				<form id="choice1">
+
+				<block>
+			
+				<goto next="Menu_Info.vxml#info_menu"/>
+	</block>
+	</form>
+	
+	
+			<form id="choice2">
+
+					<block>
+					
+					<prompt bargein="true">
+					Ihr Anicheck ist: <value expr="ANI_CHECK"/>
+				</prompt>
+					
+			<if cond="ANI_CHECK=='false'">
+				<goto next="MatrikelNr.vxml#Mat_nr"/>
+			<else />
+				<goto next="Pin.vxml#pin"/>
+			</if>
+		</block>
+
+	</form>
+	
+	
+	</vxml>
+	

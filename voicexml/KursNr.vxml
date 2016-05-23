@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
+
+	<form id="kurs">
+
+			<field name="kursNr">
+			
+				<prompt bargein="true">
+					Bitte geben Sie einen Buchstaben ein:
+				</prompt>
+				
+<grammar src="GrammarKurs.agl#Zahlen3" type="application/x-nuance-gsl" />
+
+		
+				<filled>
+				<prompt bargein="true">
+					Sien haben <value expr="kursNr"/> gewählt.
+				</prompt>
+				</filled>
+			</field>
+			
+
+
+
+	</form> 
+</vxml>
+	

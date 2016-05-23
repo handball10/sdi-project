@@ -1,0 +1,27 @@
+
+Zahlen3:public (Ziff_3:z){<date $z>}
+
+Ziff_3(Ziffer:z){return ($z)}
+ 
+Null (null)       {return (" 0")}
+      
+Ziffer1_31 [
+        a	{return ("A ")}
+        b	{return ("B ")}
+        c	{return ("C ")}
+        d	{return ("D ")}
+        e	{return ("E ")}
+        f	{return ("F ")}
+        g	{return ("G ")}
+        h	{return ("F ")}
+		i	{return ("I ")}
+		j	{return ("J ")}
+        ]
+
+Ziffer [
+     Null
+     Ziffer1_31
+     ]{return ($return)}
+
+
+	 

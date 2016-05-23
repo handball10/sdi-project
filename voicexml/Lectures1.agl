@@ -1,0 +1,41 @@
+
+Zahlen3:public (Ziff_3:z){<date $z>}
+
+Ziff_3(Ziffer:z Monat:x){return (strcat($z $x))}
+ 
+Null (null)       {return (" 0")}
+      
+Ziffer1_31 [
+        erter      {return ("1 ")}
+        [zweite zwote]{return ("2 ")}
+        drite      {return ("3 ")}
+        vierte      {return ("4 ")}
+        fünfte      {return ("5 ")}
+        sechste     {return ("6 ")}
+        siebte    {return ("7 ")}
+        achte      {return ("8 ")}
+		neunte      {return ("9 ")}
+		zenter      {return ("10 ")}
+        ]
+
+Ziffer [
+     Null
+     Ziffer1_31
+     ]{return ($return)}
+
+Monat (?monat [ 
+      januar
+      februar
+      märtz
+      aprill
+      mai
+      juni
+      juli
+      august
+      september
+      oktober
+      november
+      dezember
+     ]{return ($string)}
+     )
+	 

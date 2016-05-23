@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
+
+		<form id="welcome">
+		
+			<script>
+				<![CDATA[ function Mul2() { return "Hallo"; } ]]>
+			</script>
+			
+			<block>
+			
+			 <assign name="ANI" expr="(session.connection.local.uri).toString()" />
+			 
+				<prompt bargein="false">
+					Willkommen. 
+				</prompt>
+				
+			</block>
+
+
+    <block name="block2">
+				<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/session" enctype="text/plain" method="get" namelist=""/>
+          <prompt bargein="false">Die id ist<value expr="doit.id"/> war: <value expr="doit.creationDate" />. Okay, das war alles. </prompt>
+     		<disconnect/>
+    </block>
+		
+
+<block>
+<goto next="SetSessionID.vxml#SetSession"/>
+</block>
+
+</form> 
+</vxml>
+	
