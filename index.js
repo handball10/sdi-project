@@ -56,6 +56,7 @@ database.connect()
     app.use('/:api/session', router.session);
     app.use('/:api/xml', router.xml);
     app.use('/:api/authenticate', router.authenticate);
+    app.use('/:api/test', router.test);
 
 
     // Start the HTTP-server
