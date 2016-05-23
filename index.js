@@ -43,6 +43,10 @@ app.disable('x-powered-by');
 // Parsing JSON
 app.use(bodyParser.json({strict: true}));
 
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
+
 app.use(helmet());
 
 
