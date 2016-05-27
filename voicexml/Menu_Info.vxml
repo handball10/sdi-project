@@ -1,37 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
 
-
-
+	<property name="application.label" value="help" />
+	<property name="interdigittimeout" value="2000ms" />
+	<link>
+		<grammar>
+			<![CDATA[ Doof:public [ hilfe {
+			<HELP HELP>
+				} ] ]]>
+			</grammar>
+		</link>
+		
 <form id="info_menu">
-		
-		
-		
+	
 <field name="date">
 			
+				<prompt bargein="true">
+					Sie befinden sich in der Mesnaauskunft.
+				</prompt>
 				<prompt bargein="false">
-					Nennen Sie bitte einen Tag und einen Monat.
+					Bitte nennen Sie einen Tag und ein Monat.
 				</prompt>
 				
-<grammar src="Lectures1.agl#Zahlen3"/>
-
-
-		
-				<filled>
-					<prompt>
-						Sie haben
-						<value expr="date"/>gewählt.
-						
-					</prompt>
-					
-					
-					
-				</filled>
-			</field>
-
-<block>
-						<assign name="MENSA_DATE" expr="date" />
-</block>
+<grammar src="Gramma1.agl#Date"/>
+	<block>
+		<assign name="MENSA_DATE" expr="date" />
+	</block>
 
 		<block>
 			<goto next="GetMensaInfo.vxml#MensaInfo"/>
@@ -40,6 +34,25 @@
 
 </form> 
 
+
+ <help>
+					Geben Sie zum Beispiel erster Januar ein.
+					<disconnect/>
+				</help>
+
+  <noinput count="1">Bitte sprechen Sie etwas lauter.
+    <reprompt/>
+  </noinput>
+  <noinput count="2">Bitte sprechen Sie etwas lauter. Nennen Sie zuerst einen Tag und dann einen Monat, zum Beispiel zweiter Februar.
+    <reprompt/>
+  </noinput>
+
+  <nomatch count="1">Ich konnte Sie nicht verstehen. Bitte sprechen Sie etwas deutlicher.
+    <reprompt/>
+  </nomatch>
+  <nomatch count="2">Bitte sprechen Sie noch etwas deutlicher. Nennen Sie zuerst einen Tag und dann einen Monat, zum Beispiel dritter März.
+    <reprompt/>
+  </nomatch>
 
 
 	

@@ -46,5 +46,24 @@
 				
 				
   </form>
+	
+	
+	
+	
+	
+	
+	</form>
+
+
+
+	<form id="nichts">
+    <block name="block2">
+				<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/session" enctype="text/plain" method="get" namelist=""/>
+          <prompt bargein="false">Die id ist<value expr="doit.id"/> war: <value expr="doit.creationDate" />. Okay, das war alles. </prompt>
+     		<disconnect/>
+    </block>
+		</form>
+		
+		
 </vxml>
 

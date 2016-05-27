@@ -11,21 +11,15 @@
 				</block>
 				
 				
-			<if cond="PIN_CHECK=='true'">
-				<goto next="Pin.vxml#pin"/>
-			</if>
-			
-			
 			<field name="matNr">
 			
-				<prompt bargein="true">
-					Bitte geben Sie ihren vier Matrikelnummer ein:
+				<prompt bargein="false">
+					Um Fortzufahren geben Sie bitte ihre 4 stellige Matrikelnummer an.
 				</prompt>
 				
 <grammar src="builtin:dtmf/digits?length=4" mode="dtmf"/>
 <grammar src="Lectures.agl#Zahlen4" type="application/x-nuance-gsl" />
 
-		
 				<filled>
 					<assign name="MAT_NR" expr="'matNr'" />
 				</filled>

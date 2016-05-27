@@ -16,7 +16,6 @@
 	<var name="SESSION_ID" expr="undefined"/>
 	
 	<var name="ANI" expr="undefined"/>
-	<var name="ANI_CHECK" expr="false"/>
 	
 	<var name="PIN" expr="undefined"/>
 	<var name="PIN_CHECK" expr="false"/>
@@ -25,28 +24,9 @@
 	
 	<var name="MENSA_DATE" expr="undefined"/>
 	<var name="MENSA_INFO" expr="undefined"/>
-
-	<var name="testVar" expr="undefined"/>
-	<var name="testVar2" expr="undefined"/>
-			
-  <help>
-    Hilfe von der Wurzel kommt gleich.
-    <reprompt/>
-  </help>
-                                                 <!-- NoInput-Elemente für ganzen Dialog -->
-  <noinput count="1">Ich konnte Sie leider nicht hören.
-    <reprompt/>
-  </noinput>
-  <noinput count="2">Ich konnte Sie leider wieder nicht hören.
-    <reprompt/>
-  </noinput>
-                                                 <!-- NoMatch-Elemente für ganzen Dialog -->
-  <nomatch count="1">Ich konnte Sie leider nicht verstehen.
-    <reprompt/>
-  </nomatch>
-  <nomatch count="2">Ich konnte Sie leider wieder nicht verstehen.
-    <reprompt/>
-  </nomatch>
+	
+	<var name="KURS_NR" expr="undefined"/>
+	<var name="KURS_INFO" expr="undefined"/>
 
 </vxml>
 

@@ -1,5 +1,5 @@
 
-Zahlen3:public (Ziff_3:z){<date $z>}
+Date:public (Ziff_3:z){<date $z>}
 
 Ziff_3(Ziffer:z Monat:x){return (strcat($z $x))}
  

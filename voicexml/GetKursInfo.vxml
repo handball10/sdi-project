@@ -5,21 +5,21 @@
 		
 			<block name="block1">
 		
-			<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID MENSA_DATE"/>
+			<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID KURS_NR"/>
 
-			<assign name="MENSA_INFO" expr="'doit.MensaInfo'" />
+			<assign name="KURS_INFO" expr="'doit.KursInfo'" />
 			
     </block>
 		
 		<block>
 		
-			<if cond="MENSA_INFO==''">
+			<if cond="KURS_INFO==''">
 				<prompt bargein="true">
-					Zu Ihrer Eingabe gibt es keinen Eintrag im Mensaplan.
+					Zu Ihrer Eingabe konnten keine Informationen gefunden werden.
 				</prompt>
 			<else />
 				<prompt bargein="true">
-					Es wir am 	<value expr="MENSA_DATE"/> <value expr="MENSA_INFO"/> angeboten.
+					<value expr="KURS_INFO"/>
 				</prompt>
 			</if>
 

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
 
+	<property name="application.label" value="help" />
+	<property name="interdigittimeout" value="2000ms" />
+	<link>
+		<grammar>
+			<![CDATA[ Doof:public [ hilfe {
+			<HELP HELP>
+				} ] ]]>
+			</grammar>
+		</link>
 
 <menu id="pinTest">
 	
 
-			<prompt bargein="false">achtung inr pin wird widerholt!</prompt>
-		<prompt bargein="false">ist <value expr="MAT_NR"/> ihre pin?</prompt>
-				 </prompt>
-				 
+		<prompt bargein="false">Achtung Ihr Pin wird wiederholt!</prompt>
+		<prompt bargein="false">Ist <value expr="MAT_NR"/>korrekt?</prompt>
 				 
 		<choice dtmf="1" next="#choice1">
 			ja
@@ -16,11 +23,9 @@
 		<choice dtmf="2" next="#choice2">
 			nein
 		</choice>
-		<choice dtmf="3" next="#choice2">
+		<choice dtmf="3" next="#choice3">
 			abbrechen
 		</choice>
-
-
 
 	</menu>
 	
@@ -44,7 +49,25 @@
 	</block>
 	</form>
 	
-	
+	<help>
+		<prompt bargein="false">Sie müssen sich um Fortzufahren vollständig verifizieren. Bitte bestätigen Sie hierfür Ihre Eingabe oder wiederholen Sie den Vorgang.</prompt>
+		<prompt bargein="true">Sie können den Vorgang auch abbrechen indem Sie die Taste 3 drücken oder Abbrechen sagen.</prompt>
+    <reprompt/>
+  </help>
+
+  <noinput count="1">Bitte sprechen Sie etwas lauter.
+    <reprompt/>
+  </noinput>
+  <noinput count="2">Bitte sprechen Sie etwas lauter oder benutzen Sie die Tasten.
+    <reprompt/>
+  </noinput>
+
+  <nomatch count="1">Ich konnte Sie nicht verstehen. Bitte sprechen Sie etwas deutlicher.
+    <reprompt/>
+  </nomatch>
+  <nomatch count="2">Ich konnte Sie wieder nicht verstehen. Bitte sprechen Sie etwas lauter oder nutzen Sie die Tasten.
+    <reprompt/>
+  </nomatch>
 		
 </vxml>
 	

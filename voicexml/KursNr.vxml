@@ -3,18 +3,19 @@
 
 	<form id="kurs">
 
+
 			<field name="kursNr">
 			
-				<prompt bargein="true">
-					Bitte geben Sie einen Buchstaben ein:
+				<prompt bargein="false">
+					Bitte geben Sie ein Kurskürzel an.
 				</prompt>
 				
-<grammar src="GrammarKurs.agl#Zahlen3" type="application/x-nuance-gsl" />
+<grammar src="Grammar2.agl#Zahlen3" type="application/x-nuance-gsl" />
 
 		
 				<filled>
-				<prompt bargein="true">
-					Sien haben <value expr="kursNr"/> gewählt.
+				<prompt bargein="false">
+					<assign name="KURS_NR" expr="'kursNr'" />
 				</prompt>
 				</filled>
 			</field>

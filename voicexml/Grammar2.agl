@@ -1,0 +1,60 @@
+
+Zahlen3:public (Ziff_3:z){<kursNr $z>}
+
+Ziff_3(Zeichen:z1 Zeichen:z2 ?Zeichen:z3 ?Ziffer0_9:z4 ?Ziffer0_9:z5){return (strcat($z1 strcat($z2 strcat($z3 strcat($z4 $z5)))))}
+ 
+Null (null)       {return ("")}
+      
+Zeichen_26 [
+        [a]	{return ("A ")}
+        [b]	{return ("B ")}
+        [c]	{return ("C ")}
+        [d]	{return ("D ")}
+        [e]	{return ("E ")}
+        [f]	{return ("F ")}
+        [g]	{return ("G ")}
+        [h]	{return ("H ")}
+		[i]	{return ("I ")}
+		[j]	{return ("J ")}
+		[k]	{return ("K ")}
+		[l]	{return ("I ")}
+		[n]	{return ("N ")}
+		[m]	{return ("M ")}
+		[o]	{return ("O ")}
+		[p]	{return ("P ")}
+		[q]	{return ("Q ")}
+		[r]	{return ("R ")}
+		[s]	{return ("S ")}
+		[t]	{return ("T ")}
+		[u]	{return ("U ")}
+		[v]	{return ("V ")}
+		[w]	{return ("W ")}
+		[x]	{return ("X ")}
+		[y]	{return ("Y ")}
+		[z]	{return ("Z ")}
+        ]
+
+Zeichen [
+	Null
+     Zeichen_26
+     ]{return ($return)}
+	 
+Ziffer0_9 [
+		null      {return (" 0")}
+        eins      {return (" 1")}
+        [zwei zwo]{return (" 2")}
+        drei      {return (" 3")}
+        vier      {return (" 4")}
+        fünf      {return (" 5")}
+        sechs     {return (" 6")}
+        sieben    {return (" 7")}
+        acht      {return (" 8")}
+        neun      {return (" 9")}
+        ]
+
+Ziffer [
+     Null
+     Ziffer0_9
+     ]{return ($return)}
+
+	 

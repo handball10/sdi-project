@@ -3,13 +3,33 @@
 
 	<form id="Check_Pin">
 		
+		<block name="block1">
+		
+			<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID MAT_NR PIN"/>
+
+			<assign name="PIN_CHECK" expr="'doit.check'" />
+			
+    </block>
+		
+		
 		<block>
-				<assign name="PIN_CHECK" expr="'true'" />
+		
+			<if cond="PIN_CHECK=='false'">
+				<prompt bargein="false">
+					Sie wurden nicht veriviziert. Wenn Sie dennnoch fortfahren möchten wiederholen Sie diesen Vorgang.
+				</prompt>
+				<assign name="PIN" expr="'0'" />
+				<assign name="PIN_CHECK" expr="'false'" />
+				<assign name="MAT_NR" expr="'0'" />
+				<goto next="Menu.vxml#menu"/>
+			<else />
+				<prompt bargein="false">
+					Sie wurden erfolgreich angemeldet.
+				</prompt>
+				<goto next="KursNr.vxml#kurs"/>
+			</if>
+
 		</block>
 
-		<block>
-			<goto next="Menu.vxml#main_menu"/>
-		</block>
-		
 	</form>
 </vxml>
