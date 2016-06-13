@@ -3,13 +3,13 @@
 
 	<form id="MensaInfo">
 		
-			<block name="block1">
-		
+		<block name="block1">
+
 			<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID MENSA_DATE"/>
 
 			<assign name="MENSA_INFO" expr="'doit.MensaInfo'" />
-			
-    </block>
+
+		</block>
 		
 		<block>
 		

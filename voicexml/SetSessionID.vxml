@@ -13,8 +13,6 @@
     </block>
 		
 		<block>
-		
-		<block>
 			<goto next="Menu.vxml#main_menu"/>
 		</block>
 		

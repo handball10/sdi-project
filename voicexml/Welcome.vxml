@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1"
+      xml:lang="de-DE" application="root.vxml">
 
-		<form id="welcome">
-		
-			<script>
-				<![CDATA[ function Mul2() { return "Hallo"; } ]]>
-			</script>
-			
-			<block>
-			
-			 <assign name="ANI" expr="(session.connection.local.uri).toString()" />
-			 
-				<prompt bargein="false">
-					Willkommen im THM Informations Center.
-				</prompt>
-				
-			</block>
+    <form id="welcome">
+
+    <script>
+        <![CDATA[ function Mul2() { return "Hallo"; } ]]>
+    </script>
+
+    <block>
+
+        <assign name="ANI" expr="(session.connection.local.uri).toString()"/>
+
+        <prompt bargein="false">
+            Willkommen im THM Informations Center.
+        </prompt>
+
+    </block>
 
 
-		
-
-<block>
-<goto next="SetSessionID.vxml#SetSession"/>
-</block>
+    <block>
+        <goto next="SetSessionID.vxml#SetSession"/>
+    </block>
 
 </vxml>
 	

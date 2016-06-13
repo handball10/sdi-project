@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1"
+      xml:lang="de-DE" application="root.vxml">
 
-	<form id="kurs">
-
-
-			<field name="kursNr">
-			
-				<prompt bargein="false">
-					Bitte geben Sie ein Kurskürzel an.
-				</prompt>
-				
-<grammar src="Grammar2.agl#Zahlen3" type="application/x-nuance-gsl" />
-
-		
-				<filled>
-				<prompt bargein="false">
-					<assign name="KURS_NR" expr="'kursNr'" />
-				</prompt>
-				</filled>
-			</field>
-			
+    <form id="kurs">
 
 
+        <field name="kursNr">
 
-	</form> 
+            <prompt bargein="false">
+                Bitte geben Sie ein Kurskürzel an.
+            </prompt>
+
+            <grammar src="Grammar2.agl#Zahlen3" type="application/x-nuance-gsl"/>
+
+
+            <filled>
+                <prompt bargein="false">
+                    <assign name="KURS_NR" expr="'kursNr'"/>
+                </prompt>
+            </filled>
+        </field>
+
+
+    </form>
 </vxml>
 	

@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1"
+      xml:lang="de-DE" application="root.vxml">
 
-	<form id="Mat_nr">
-		
-		
-		<block>
-			<prompt bargein="true">
-					Ihr Pincheck ist: <value expr="ANI_CHECK"/>
-				</prompt>
-				</block>
-				
-				
-			<field name="matNr">
-			
-				<prompt bargein="false">
-					Um Fortzufahren geben Sie bitte ihre 4 stellige Matrikelnummer an.
-				</prompt>
-				
-<grammar src="builtin:dtmf/digits?length=4" mode="dtmf"/>
-<grammar src="Lectures.agl#Zahlen4" type="application/x-nuance-gsl" />
+    <form id="Mat_nr">
 
-				<filled>
-					<assign name="MAT_NR" expr="'matNr'" />
-				</filled>
-			</field>
-			
 
-			<block>
-<goto next="MatrikelTest.vxml#matTest"/>
-</block>
+        <block>
+            <prompt bargein="true">
+                Ihr Pincheck ist:
+                <value expr="ANI_CHECK"/>
+            </prompt>
+        </block>
 
-	</form> 
+
+        <field name="matNr">
+
+            <prompt bargein="false">
+                Um Fortzufahren geben Sie bitte ihre 4 stellige Matrikelnummer an.
+            </prompt>
+
+            <grammar src="builtin:dtmf/digits?length=4" mode="dtmf"/>
+            <grammar src="Lectures.agl#Zahlen4" type="application/x-nuance-gsl"/>
+
+            <filled>
+                <assign name="MAT_NR" expr="'matNr'"/>
+            </filled>
+        </field>
+
+
+        <block>
+            <goto next="MatrikelTest.vxml#matTest"/>
+        </block>
+
+    </form>
 </vxml>
 	
