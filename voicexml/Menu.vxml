@@ -16,15 +16,23 @@
     <menu id="main_menu">
 
 
-        <prompt bargein="false">Sie befinden sich im Hauptmenü.</prompt>
-        <prompt bargein="true">Zur Mensaauskunft drücken Sie die Taste 1 oder sagen Mensa!</prompt>
-        <prompt bargein="true">zur Kursauskunft drücken Sie die Taste 2 oder sagen Kurs!</prompt>
+        <prompt bargein="false">
+				<audio src="Audio/Menu/001.wav"><voice name="steffen">Sie befinden sich im Hauptmenü.</voice></audio>
+			</prompt>
+			
+        <prompt bargein="true">
+				<audio src="Audio/Menu/002.wav"><voice name="steffen">Zur Mensaauskunft drücken Sie die Taste 1 oder sagen Mensa!</voice></audio>
+				</prompt>
+				
+        <prompt bargein="true">
+				<audio src="Audio/Menu/003.wav"><voice name="steffen">zur Kursauskunft drücken Sie die Taste 2 oder sagen Kurs!</voice></audio>
+				</prompt>
 
         <choice dtmf="1" next="#choice1">
             mensa
         </choice>
         <choice dtmf="2" next="#choice2">
-            Kurs
+            kurs
         </choice>
         <choice dtmf="3" next="#choice3">
             ende
@@ -34,7 +42,7 @@
 
     <form id="choice1">
         <block>
-            <goto next="Menu_Info.vxml#info_menu"/>
+			  <goto next="Menu_Info.vxml#info_menu"/>
         </block>
     </form>
 
@@ -58,26 +66,29 @@
     </form>
 
     <help>
-        <prompt bargein="false">In diesem Menü können Sie entscheiden, ob Sie sich mit der Taste 1 Speisen im Mensaplan
-            ausgeben lassen oder mit der 2 Kursinformationen abrufen wollen.
+		
+        <prompt bargein="false">
+				<audio src="Audio/Menu/004.wav"><voice name="steffen">In diesem Menü können Sie entscheiden, ob Sie sich mit der Taste 1 Speisen im Mensaplanausgeben lassen oder mit der 2 Kursinformationen abrufen wollen.</voice></audio>
         </prompt>
-        <prompt bargein="true">Sie können auch das Gespräch beenden, indem Sie die Taste 3 drücken oder Ende sagen.
+				
+        <prompt bargein="true">
+				<audio src="Audio/Menu/005.wav"><voice name="steffen">Sie können auch das Gespräch beenden, indem Sie die Taste 3 drücken oder Ende sagen.</voice></audio>
         </prompt>
         <reprompt/>
+				
     </help>
 
-    <noinput count="1">Bitte sprechen Sie etwas lauter.
+    <noinput count="1"><audio src="Audio/Menu/006.wav"><voice name="steffen">Bitte sprechen Sie etwas lauter.</voice></audio>
         <reprompt/>
     </noinput>
-    <noinput count="2">Bitte sprechen Sie etwas lauter oder benutzen Sie die Tasten.
+    <noinput count="2"><audio src="Audio/Menu/007.wav"><voice name="steffen">Bitte sprechen Sie etwas lauter oder benutzen Sie die Tasten.</voice></audio>
         <reprompt/>
     </noinput>
 
-    <nomatch count="1">Ich konnte Sie nicht verstehen. Bitte sprechen Sie etwas deutlicher.
+    <nomatch count="1"><audio src="Audio/Menu/008.wav"><voice name="steffen">Ich konnte Sie nicht verstehen. Bitte sprechen Sie etwas deutlicher.</voice></audio>
         <reprompt/>
     </nomatch>
-    <nomatch count="2">Ich konnte Sie wieder nicht verstehen. Bitte sprechen Sie etwas lauter oder nutzen Sie die
-        Tasten.
+    <nomatch count="2"><audio src="Audio/Menu/009.wav"><voice name="steffen">Ich konnte Sie wieder nicht verstehen. Bitte sprechen Sie etwas lauter oder nutzen Sie die Tasten.</voice></audio>
         <reprompt/>
     </nomatch>
 

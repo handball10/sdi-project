@@ -14,15 +14,20 @@
         <assign name="ANI" expr="(session.connection.local.uri).toString()"/>
 
         <prompt bargein="false">
-            Willkommen im THM Informations Center.
+				<audio src="Audio/Willkommen/001.wav"><voice name="steffen">Willkommen im THM Informations Center.</voice></audio>
         </prompt>
 
     </block>
 
 
     <block>
-        <goto next="SetSessionID.vxml#SetSession"/>
+			<if cond="DEBUG=='0'">
+				<goto next="DEBUG_SetSessionID.vxml#SetSession"/>
+			<else />
+					<goto next="SetSessionID.vxml#SetSession"/>
+			</if>
     </block>
 
+	</form>
 </vxml>
 	

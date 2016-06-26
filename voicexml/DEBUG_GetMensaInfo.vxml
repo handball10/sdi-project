@@ -3,15 +3,14 @@
 
 	<form id="MensaInfo">
 		
-		<block name="block1">
-
-			<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID MENSA_DATE"/>
-
-			<assign name="MENSA_INFO" expr="'doit.MensaInfo'" />
+		<block>
+		
+				<assign name="MENSA_INFO" expr="'Schnitzel'" />
 
 		</block>
-		
-		<block>
+
+
+			<block>
 		
 			<if cond="MENSA_INFO==''">
 			
@@ -23,13 +22,15 @@
 			
 				<prompt bargein="false">
 				<audio src="Audio/GetMensaInfo/001.wav"><voice name="steffen">Es wir am </voice></audio>
-					<value expr="MENSA_DATE"/> <value expr="MENSA_INFO"/>
+				<voice name="steffen"><value expr="MENSA_DATE"/> <value expr="MENSA_INFO"/> </voice>
+					
 					<audio src="Audio/GetMensaInfo/002.wav"><voice name="steffen">angeboten.</voice></audio>
 				</prompt>
 				
 			</if>
 
 		</block>
+
 
 		<block>
 			<goto next="Menu.vxml#main_menu"/>

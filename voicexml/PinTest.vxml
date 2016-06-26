@@ -16,8 +16,14 @@
     <menu id="pinTest">
 
 
-        <prompt bargein="false">Achtung Ihr Pin wird wiederholt!</prompt>
-        <prompt bargein="false">Ist<value expr="MAT_NR"/>korrekt?
+        <prompt bargein="false">
+				<audio src="Audio/PinTest/001.wav"><voice name="steffen">Achtung Ihr Pin wird wiederholt!</voice></audio>
+			</prompt>
+				
+        <prompt bargein="false">
+				<audio src="Audio/PinTest/002.wav"><voice name="steffen">Ist </voice></audio>
+				<voice name="steffen"><value expr="MAT_NR"/></voice>
+				<audio src="Audio/PinTest/003.wav"><voice name="steffen">korrekt?</voice></audio>
         </prompt>
 
         <choice dtmf="1" next="#choice1">
@@ -35,7 +41,12 @@
 
     <form id="choice1">
         <block>
-            <goto next="CheckPin.vxml#Check_Pin"/>
+				<if cond="DEBUG=='0'">
+				<goto next="DEBUG_CheckPin.vxml#Check_Pin"/>
+			<else />
+					<goto next="CheckPin.vxml#Check_Pin"/>
+			</if>
+            
         </block>
     </form>
 
@@ -52,28 +63,31 @@
         </block>
     </form>
 
-    <help>
-        <prompt bargein="false">Sie müssen sich um Fortzufahren vollständig verifizieren. Bitte bestätigen Sie hierfür
-            Ihre Eingabe oder wiederholen Sie den Vorgang.
+		<help>
+		
+        <prompt bargein="false">
+				<audio src="Audio/PinTest/004.wav"><voice name="steffen">Sie müssen sich um Fortzufahren vollständig verifizieren. Bitte bestätigen sie hierfür Ihre Eingabe oder wiederholen sie den Vorgang.</voice></audio>
         </prompt>
-        <prompt bargein="true">Sie können den Vorgang auch abbrechen indem Sie die Taste 3 drücken oder Abbrechen
-            sagen.
+				
+        <prompt bargein="true">
+				<audio src="Audio/PinTest/005.wav"><voice name="steffen">Sie können den Vorgang auch abbrechen indem sie die Taste 3 drücken oder Abbrechen sagen.</voice></audio>
         </prompt>
+				
         <reprompt/>
+				
     </help>
 
-    <noinput count="1">Bitte sprechen Sie etwas lauter.
+    <noinput count="1"><audio src="Audio/PinTest/006.wav"><voice name="steffen">Bitte sprechen Sie etwas lauter.</voice></audio>
         <reprompt/>
     </noinput>
-    <noinput count="2">Bitte sprechen Sie etwas lauter oder benutzen Sie die Tasten.
+    <noinput count="2"><audio src="Audio/PinTest/007.wav"><voice name="steffen">Bitte sprechen Sie noch etwas lauter oder nutzen Sie die Tasten.</voice></audio>
         <reprompt/>
     </noinput>
 
-    <nomatch count="1">Ich konnte Sie nicht verstehen. Bitte sprechen Sie etwas deutlicher.
+    <nomatch count="1"><audio src="Audio/PinTest/008.wav"><voice name="steffen">Sprechen Sie etwas deutlicher.</voice></audio>
         <reprompt/>
     </nomatch>
-    <nomatch count="2">Ich konnte Sie wieder nicht verstehen. Bitte sprechen Sie etwas lauter oder nutzen Sie die
-        Tasten.
+    <nomatch count="2"><audio src="Audio/PinTest/009.wav"><voice name="steffen">Sprechen Sie noch etwas deutlicher oder nutzen Sie die Tasten.</voice></audio>
         <reprompt/>
     </nomatch>
 

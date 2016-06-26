@@ -18,43 +18,51 @@
         <field name="date">
 
             <prompt bargein="true">
-                Sie befinden sich in der Mensaauskunft.
+						<audio src="Audio/Menu_Info/001.wav"><voice name="steffen">Sie befinden sich in der Mensaauskunft.</voice></audio>
+                
             </prompt>
+						
             <prompt bargein="false">
-                Bitte nennen Sie einen Tag und einen Monat.
+						<audio src="Audio/Menu_Info/002.wav"><voice name="steffen">Bitte nennen Sie einen Tag und einen Monat.</voice></audio>
             </prompt>
 
             <grammar src="Gramma1.agl#Date"/>
-            <block>
-                <assign name="MENSA_DATE" expr="date"/>
-            </block>
+            
+						<filled>
+						<assign name="MENSA_DATE" expr="date"/>
+						</filled>	
+            
         </field>
 
         <block>
-            <goto next="GetMensaInfo.vxml#MensaInfo"/>
+				
+				<if cond="DEBUG=='0'">
+				<goto next="DEBUG_GetMensaInfo.vxml#MensaInfo"/>
+			<else />
+					<goto next="GetMensaInfo.vxml#MensaInfo"/>
+			</if>
+            
         </block>
 
     </form>
 
 
     <help>
-        Geben Sie zum Beispiel erster Januar ein.
-        <disconnect/>
+		<audio src="Audio/Menu_Info/003.wav"><voice name="steffen">Geben Sie zum Beispiel erster Januar ein.</voice></audio>
+        <reprompt/>
     </help>
 
-    <noinput count="1">Bitte sprechen Sie etwas lauter.
+    <noinput count="1"><audio src="Audio/Menu_Info/004.wav"><voice name="steffen">Bitte sprechen Sie etwas lauter.</voice></audio>
         <reprompt/>
     </noinput>
-    <noinput count="2">Bitte sprechen Sie etwas lauter. Nennen Sie zuerst einen Tag und dann einen Monat, zum Beispiel
-        zweiter Februar.
+    <noinput count="2"><audio src="Audio/Menu_Info/005.wav"><voice name="steffen">Bitte sprechen Sie etwas lauter. Nennen Sie zuerst einen Tag und dann einen Monat, zum Beispiel zweiter Februar.</voice></audio>
         <reprompt/>
     </noinput>
 
-    <nomatch count="1">Ich konnte Sie nicht verstehen. Bitte sprechen Sie etwas deutlicher.
+    <nomatch count="1"><audio src="Audio/Menu_Info/006.wav"><voice name="steffen">Ich konnte Sie nicht verstehen. Bitte sprechen Sie etwas deutlicher.</voice></audio>
         <reprompt/>
     </nomatch>
-    <nomatch count="2">Bitte sprechen Sie noch etwas deutlicher. Nennen Sie zuerst einen Tag und dann einen Monat, zum
-        Beispiel dritter März.
+    <nomatch count="2"><audio src="Audio/Menu_Info/007.wav"><voice name="steffen">Bitte sprechen Sie noch etwas deutlicher. Nennen Sie zuerst einen Tag und dann einen Monat, zum Beispiel dritter März.</voice></audio>
         <reprompt/>
     </nomatch>
 

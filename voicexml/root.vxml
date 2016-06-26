@@ -27,6 +27,7 @@
 	
 	<var name="KURS_NR" expr="undefined"/>
 	<var name="KURS_INFO" expr="undefined"/>
-
+	
+	<var name="DEBUG" expr="0"/>
 </vxml>
 

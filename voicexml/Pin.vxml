@@ -14,7 +14,8 @@
         <field name="pin_nr">
 
             <prompt bargein="false">
-                Bitte geben Sie Ihren vierstelligen Pin ein.
+						<audio src="Audio/Pin/001.wav"><voice name="steffen">Bitte geben Sie Ihren vierstelligen Pin ein.</voice></audio>
+                
             </prompt>
 
             <grammar src="builtin:dtmf/digits?length=4" mode="dtmf"/>
@@ -25,6 +26,7 @@
                 <assign name="PIN" expr="'pin_nr'"/>
             </filled>
         </field>
+</block>
 
 
         <block>

@@ -9,7 +9,7 @@
         <field name="kursNr">
 
             <prompt bargein="false">
-                Bitte geben Sie ein Kurskürzel an.
+						<audio src="Audio/KursNr/001.wav"><voice name="steffen">Bitte geben Sie ein Kurskürzel an.</voice></audio>
             </prompt>
 
             <grammar src="Grammar2.agl#Zahlen3" type="application/x-nuance-gsl"/>

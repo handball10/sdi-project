@@ -16,7 +16,10 @@
     <menu id="matTest">
 
 
-        <prompt bargein="false">Ist<value expr="MAT_NR"/>Ihre Matrikelnummer?
+        <prompt bargein="false">
+				<audio src="Audio/MatrikelTest/001.wav"><voice name="steffen">Ist</voice></audio>
+				<voice name="steffen"><value expr="MAT_NR"/></voice>
+				<audio src="Audio/MatrikelTest/002.wav"><voice name="steffen">Ihre Matrikelnummer?</voice></audio>
         </prompt>
 
 
@@ -40,7 +43,6 @@
         </block>
     </form>
 
-
     <form id="choice2">
         <block>
             <goto next="MatrikelNr.vxml#Mat_nr"/>
@@ -53,27 +55,32 @@
         </block>
     </form>
 
+
     <help>
-        <prompt bargein="false">Sie müssen sich um Fortzufahren vollständig verifizieren. Bitte bestätigen sie hierfür
-            Ihre
-            Eingabe oder wiederholen sie den Vorgang.
+		
+        <prompt bargein="false">
+				<audio src="Audio/MatrikelTest/003.wav"><voice name="steffen">Sie müssen sich um Fortzufahren vollständig verifizieren. Bitte bestätigen sie hierfür Ihre Eingabe oder wiederholen sie den Vorgang.</voice></audio>
         </prompt>
-        <prompt bargein="true">Sie können den Vorgang auch abbrechen indem sie die Taste 3 drücken oder Abbrechen sagen.
+				
+        <prompt bargein="true">
+				<audio src="Audio/MatrikelTest/004.wav"><voice name="steffen">Sie können den Vorgang auch abbrechen indem sie die Taste 3 drücken oder Abbrechen sagen.</voice></audio>
         </prompt>
+				
         <reprompt/>
+				
     </help>
 
-    <noinput count="1">Bitte sprechen Sie etwas lauter.
+    <noinput count="1"><audio src="Audio/MatrikelTest/005.wav"><voice name="steffen">Bitte sprechen Sie etwas lauter.</voice></audio>
         <reprompt/>
     </noinput>
-    <noinput count="2">Bitte sprechen Sie noch etwas lauter oder nutzen Sie die Tasten.
+    <noinput count="2"><audio src="Audio/MatrikelTest/006.wav"><voice name="steffen">Bitte sprechen Sie noch etwas lauter oder nutzen Sie die Tasten.</voice></audio>
         <reprompt/>
     </noinput>
 
-    <nomatch count="1">Sprechen Sie etwas deutlicher.
+    <nomatch count="1"><audio src="Audio/MatrikelTest/007.wav"><voice name="steffen">Sprechen Sie etwas deutlicher.</voice></audio>
         <reprompt/>
     </nomatch>
-    <nomatch count="2">Sprechen Sie noch etwas deutlicher oder nutzen Sie die Tasten.
+    <nomatch count="2"><audio src="Audio/MatrikelTest/008.wav"><voice name="steffen">Sprechen Sie noch etwas deutlicher oder nutzen Sie die Tasten.</voice></audio>
         <reprompt/>
     </nomatch>
 

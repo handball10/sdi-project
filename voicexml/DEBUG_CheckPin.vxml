@@ -3,15 +3,11 @@
 
 	<form id="Check_Pin">
 		
-		<block name="block1">
-		
-			<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID MAT_NR PIN"/>
+		<block>
+				<assign name="PIN_CHECK" expr="'true'" />
+		</block>
 
-			<assign name="PIN_CHECK" expr="'doit.check'" />
-			
-    	</block>
-		
-		
+
 		<block>
 		
 			<if cond="PIN_CHECK=='false'">
@@ -32,6 +28,6 @@
 			</if>
 
 		</block>
-
+		
 	</form>
 </vxml>
