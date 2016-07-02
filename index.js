@@ -56,9 +56,13 @@ database.connect()
     var model = new Model(database);
     var router = new Router(model);
 
+
+
+    app.use('/user', router.user);
     app.use('/:api', router.validator);
     app.use('/:api/session', router.session);
-    app.use('/:api/xml', router.xml);
+    app.use('/:api/', router.validateSessionID);
+    app.use('/:api/:sessionID/xml', router.xml);
     app.use('/:api/authenticate', router.authenticate);
     app.use('/:api/test', router.test);
 

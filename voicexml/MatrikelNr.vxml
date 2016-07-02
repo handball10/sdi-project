@@ -15,7 +15,7 @@
             <grammar src="Lectures.agl#Zahlen4" type="application/x-nuance-gsl"/>
 
             <filled>
-                <assign name="MAT_NR" expr="'matNr'"/>
+                <assign name="MAT_NR" expr="matNr"/>
             </filled>
         </field>
 				

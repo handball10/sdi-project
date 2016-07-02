@@ -5,10 +5,15 @@
 		
 		<block name="block1">
 		
-			<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="ANI"/>
+			<data name="request" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/session" enctype="application/x-www-form-urlencoded" method="post" namelist="ANI"/>
 
-			<assign name="SESSION_ID" expr="'doit.sessionID'" />
-			<assign name="MAT_NR" expr="'doit.MatNr'" />
+			<assign name="SESSION_ID" expr="request.id" />
+			<assign name="MAT_NR" expr="request.number" />
+			
+			<log label="Connection" >
+         <value expr="SESSION_ID"/>
+				 <value expr="request.number"/>
+      </log>
 			
     </block>
 		

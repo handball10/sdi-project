@@ -3,11 +3,32 @@
       xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1"
       xml:lang="de-DE" application="root.vxml">
 
-    <form id="pin">
+	<form id="pin">
+
+        <field name="pin_nr">
+
+            <prompt bargein="false">
+						<audio src="Audio/Pin/001.wav"><voice name="steffen">Bitte geben Sie Ihren vierstelligen Pin ein.</voice></audio>
+            </prompt>
+
+            <grammar src="builtin:dtmf/digits?length=4" mode="dtmf"/>
+            <grammar src="Lectures.agl#Zahlen4" type="application/x-nuance-gsl"/>
+
+            <filled>
+                <assign name="PIN_NR" expr="pin_nr"/>
+            </filled>
+        </field>
+				
+        <block>
+            <goto next="PinTest.vxml#pinTest"/>
+        </block>
+
+    </form>
+    <!--<form id="pin">
 
         <block>
 
-        <if cond="PIN_CHECK=='true'">
+        <if cond="PIN_CHECK==true">
             <goto next="KursNr.vxml#kursNr"/>
         </if>
 
@@ -23,16 +44,20 @@
 
 
             <filled>
-                <assign name="PIN" expr="'pin_nr'"/>
+                <assign name="PIN" expr="pin_nr"/>
             </filled>
-        </field>
-</block>
+						
+						<log>
+							
+						</log>
+				</field>
+			</block>
 
 
         <block>
             <goto next="PinTest.vxml#pinTest"/>
         </block>
 
-    </form>
+    </form>-->
 </vxml>
 	

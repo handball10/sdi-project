@@ -19,10 +19,14 @@
         <prompt bargein="false">
 				<audio src="Audio/PinTest/001.wav"><voice name="steffen">Achtung Ihr Pin wird wiederholt!</voice></audio>
 			</prompt>
+			
+			<log>
+			<value expr="MAT_NR"/>
+			</log>
 				
         <prompt bargein="false">
 				<audio src="Audio/PinTest/002.wav"><voice name="steffen">Ist </voice></audio>
-				<voice name="steffen"><value expr="MAT_NR"/></voice>
+				<voice name="steffen"><value expr="PIN_NR"/></voice>
 				<audio src="Audio/PinTest/003.wav"><voice name="steffen">korrekt?</voice></audio>
         </prompt>
 

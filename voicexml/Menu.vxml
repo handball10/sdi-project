@@ -50,7 +50,7 @@
     <form id="choice2">
 
         <block>
-            <if cond="MAT_NR=='0'">
+            <if cond="MAT_NR==0">
                 <goto next="MatrikelNr.vxml#Mat_nr"/>
                 <else/>
                 <goto next="Pin.vxml#pin"/>
