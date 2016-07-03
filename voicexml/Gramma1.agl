@@ -1,21 +1,42 @@
 
 Date:public (Ziff_3:z){<date $z>}
 
-Ziff_3(Ziffer:z Monat:x){return (strcat($z $x))}
+Ziff_3(Ziffer1_31:z Monat:x){return (strcat($z $x))}
  
 Null (null)       {return (" 0")}
       
 Ziffer1_31 [
-        erter      {return ("1 ")}
-        [zweite zwote]{return ("2 ")}
-        drite      {return ("3 ")}
-        vierte      {return ("4 ")}
-        fünfte      {return ("5 ")}
-        sechste     {return ("6 ")}
-        siebte    {return ("7 ")}
-        achte      {return ("8 ")}
-		neunte      {return ("9 ")}
-		zenter      {return ("10 ")}
+        erster      {return ("01.")}
+        [zweiter zwote]{return ("02.")}
+        dritter      {return ("03.")}
+        vierter      {return ("04.")}
+        fuenfter     {return ("05.")}
+        sechster     {return ("06.")}
+        siebter    {return ("07.")}
+        achter      {return ("08.")}
+		neunter      {return ("09.")}
+		zehnter      {return ("10.")}
+		elfter      {return ("11.")}
+		zwoelfter      {return ("12.")}
+		dreizehnter      {return ("13.")}
+		vierzehnter      {return ("14.")}
+		fuenfzehnter      {return ("15.")}
+		sechzehnter      {return ("16.")}
+		siebzehnter      {return ("17.")}
+		achtzehnter      {return ("18.")}
+		neunzehnter      {return ("19.")}
+		zwanzister       {return ("20.")}
+		einundzwanzigster      {return ("21.")}
+		zweiundzwanzigster      {return ("22.")}
+		dreiundzwanzigster      {return ("23.")}
+		vierundzwanzigster      {return ("24.")}
+		fuenfundzwanzigster      {return ("25.")}
+		sechsundzwanzigster      {return ("26.")}
+		siebenundzwanzigster      {return ("27.")}
+		achtundzwanzigster      {return ("28.")}
+		neunundzwanzigster      {return ("29.")}
+		dreissigster             {return ("30.")}
+		einunddreissigster      {return ("31.")}
         ]
 
 Ziffer [
@@ -24,18 +45,18 @@ Ziffer [
      ]{return ($return)}
 
 Monat (?monat [ 
-      januar
-      februar
-      märtz
-      aprill
-      mai
-      juni
-      juli
-      august
-      september
-      oktober
-      november
-      dezember
-     ]{return ($string)}
+      januar   {return("01.")}
+      februar {return("02.")}
+      maerz {return("03.")}
+      april {return("04.")}
+      mai {return("05.")}
+      juni {return("06.")}
+      juli {return("07.")}
+      august {return("08.")}
+      september {return("09.")}
+      oktober {return("10.")}
+      november {return("11.")}
+      dezember {return("12.")}
+     ]
      )
 	 

@@ -11,17 +11,24 @@
             <prompt bargein="false">
 						<audio src="Audio/KursNr/001.wav"><voice name="steffen">Bitte geben Sie ein Kurskürzel an.</voice></audio>
             </prompt>
+					
+						<grammar src="Grammar2.agl#Zahlen3" type="application/x-nuance-gsl"/>
 
-            <grammar src="Grammar2.agl#Zahlen3" type="application/x-nuance-gsl"/>
 
+					
 
             <filled>
-                <prompt bargein="false">
-                    <assign name="KURS_NR" expr="'kursNr'"/>
-                </prompt>
+                    <assign name="KURS_NR" expr="kursNr"/>
             </filled>
+						
+						<log label="KURS_NR">
+						<value expr="KURS_NR"/>
+					</log>
         </field>
 
+			<block>
+				<goto next="GetKursInfo.vxml#KursInfo"/>
+			</block>
 
     </form>
 </vxml>

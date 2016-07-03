@@ -5,8 +5,7 @@
 		
 		<block name="block1">
 		
-			<data name="request" src="http://localhost:3000/e3
-			#0ecf1c-0184-4b65-b458-a41e187da9b6/authenticate" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID MAT_NR PIN_NR"/>
+			<data name="request" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/authenticate" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID MAT_NR PIN_NR"/>
 
 			<assign name="PIN_CHECK" expr="request.check" />
 			

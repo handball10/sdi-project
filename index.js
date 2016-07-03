@@ -14,13 +14,16 @@ var express = require('express'),
     Router = require('./lib/router/rest/main'),
     helmet = require('helmet'),
     database = require('./lib/database/collection'),
-    Model = require('./lib/model/index')
+    Model = require('./lib/model/index'),
+    moment = require('moment')
 ;
 
 // instantiate express router
 var app = express(),
     router
 ;
+
+moment.locale('de');
 
 
 // get the config
@@ -56,13 +59,13 @@ database.connect()
     var model = new Model(database);
     var router = new Router(model);
 
-
-
     app.use('/user', router.user);
     app.use('/:api', router.validator);
     app.use('/:api/session', router.session);
     app.use('/:api/', router.validateSessionID);
-    app.use('/:api/:sessionID/xml', router.xml);
+    app.use('/:api/course', router.course);
+    app.use('/:api/mensa', router.mensa);
+    //app.use('/:api/:sessionID/xml', router.xml);
     app.use('/:api/authenticate', router.authenticate);
     app.use('/:api/test', router.test);
 

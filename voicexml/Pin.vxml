@@ -4,7 +4,7 @@
       xml:lang="de-DE" application="root.vxml">
 
 	<form id="pin">
-
+			<!--<if  cond="AUTHENTICATED==false">-->
         <field name="pin_nr">
 
             <prompt bargein="false">
@@ -22,7 +22,9 @@
         <block>
             <goto next="PinTest.vxml#pinTest"/>
         </block>
-
+				<!-- </if>
+				<else />
+					<goto next="KursNr.vxml#kurs"/>-->
     </form>
     <!--<form id="pin">
 

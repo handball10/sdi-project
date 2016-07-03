@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" xml:lang="de-DE" application="root.vxml">
 
-	<form id="MensaInfo">
+	<form id="KursInfo">
 		
 		<block name="block1">
 
-			<if cond="DEBUG=='0'">
+			<!--<if cond="DEBUG=='0'">
 				<assign name="KURS_INFO" expr="''" />
-			<else />
-								<data name="doit" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/test" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID KURS_NR"/>
+			<else /> -->
+								<data name="request" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/course" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID KURS_NR"/>
 
-								<assign name="KURS_INFO" expr="'doit.KursInfo'" />
+								<assign name="KURS_INFO" expr="request.course" />
 
-			</if>
+			<!-- </if> -->
 			
+			<log label="CourseInfo">
+				<value expr="KURS_INFO"/>
+			</log>
 
 		</block>
 		
 		<block>
 		
 			<if cond="KURS_INFO==''">
-				<prompt bargein="true">
+				<prompt bargein="false">
 					<audio src="Audio/GetKursInfo/001.wav"><voice name="steffen">Zu Ihrer Eingabe konnten keine Informationen gefunden werden.</voice></audio>
 				</prompt>
 			<else />
-				<prompt bargein="true">
+				<prompt bargein="false">
 					<voice name="steffen"><value expr="KURS_INFO"/></voice>
 				</prompt>
 			</if>
