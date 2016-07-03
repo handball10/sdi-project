@@ -7,7 +7,7 @@
 
 			<data name="request" src="http://localhost:3000/e30ecf1c-0184-4b65-b458-a41e187da9b6/mensa" enctype="application/x-www-form-urlencoded" method="post" namelist="SESSION_ID MENSA_DATE"/>
 
-			<assign name="MENSA_INFO" expr="request.result" />
+			<assign name="MENSA_INFO" expr="request.plan" />
 			<assign name="MENSA_FORMATTED" expr="request.date" />
 			
 
@@ -15,7 +15,7 @@
 		
 		<block>
 		
-			<if cond="MENSA_INFO.lenght === 0">
+			<if cond="MENSA_INFO.length === 0">
 			
 				<prompt bargein="false">
 				<audio src="Audio/GetMensaInfo/003.wav"><voice name="steffen">Zu Ihrer Eingabe gibt es keinen Eintrag im Mensaplan.</voice></audio>

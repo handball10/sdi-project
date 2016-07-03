@@ -26,6 +26,7 @@
 	
 	<var name="MENSA_DATE" expr="undefined"/>
 	<var name="MENSA_INFO" expr="undefined"/>
+	<var name="MENSA_FORMATTED" expr="undefined"/>
 	
 	<var name="KURS_NR" expr="undefined"/>
 	<var name="KURS_INFO" expr="undefined"/>
