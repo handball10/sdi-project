@@ -1,19 +1,19 @@
-Zahlen4:public (Ziff_4:z){<Kdnr $z>}
+Zahlen4:public (Ziff_4:z){<nummer $z>}
 
 Ziff_4(Ziffer:z1 Ziffer:z2 Ziffer:z3 Ziffer:z4){return (strcat($z1 strcat($z2 strcat($z3 $z4))))}
  
-Null (null)       {return (" 0")}
+Null (null)       {return ("0")}
       
 Ziffer1_9 [
-        eins      {return (" 1")}
-        [zwei zwo]{return (" 2")}
-        drei      {return (" 3")}
-        vier      {return (" 4")}
-        fünf      {return (" 5")}
-        sechs     {return (" 6")}
-        sieben    {return (" 7")}
-        acht      {return (" 8")}
-        neun      {return (" 9")}
+        eins      {return ("1")}
+        [zwei zwo]{return ("2")}
+        drei      {return ("3")}
+        vier      {return ("4")}
+        fuenf      {return ("5")}
+        sechs     {return ("6")}
+        sieben    {return ("7")}
+        acht      {return ("8")}
+        neun      {return ("9")}
         ]
 
 Ziffer [

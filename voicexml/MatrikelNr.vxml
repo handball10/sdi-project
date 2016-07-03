@@ -5,18 +5,20 @@
 
     <form id="Mat_nr">
 
-        <field name="matNr">
+        <field name="nummer">
 
             <prompt bargein="false">
 						<audio src="Audio/MatrikelNr/001.wav"><voice name="steffen">Um Fortzufahren geben Sie bitte ihre 4 stellige Matrikelnummer an.</voice></audio>
             </prompt>
 
+
             <grammar src="builtin:dtmf/digits?length=4" mode="dtmf"/>
             <grammar src="Lectures.agl#Zahlen4" type="application/x-nuance-gsl"/>
 
             <filled>
-                <assign name="MAT_NR" expr="matNr"/>
+                <assign name="MAT_NR" expr="nummer"/>
             </filled>
+					
         </field>
 				
         <block>

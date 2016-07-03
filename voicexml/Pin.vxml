@@ -5,7 +5,7 @@
 
 	<form id="pin">
 			<!--<if  cond="AUTHENTICATED==false">-->
-        <field name="pin_nr">
+        <field name="nummer">
 
             <prompt bargein="false">
 						<audio src="Audio/Pin/001.wav"><voice name="steffen">Bitte geben Sie Ihren vierstelligen Pin ein.</voice></audio>
@@ -15,7 +15,7 @@
             <grammar src="Lectures.agl#Zahlen4" type="application/x-nuance-gsl"/>
 
             <filled>
-                <assign name="PIN_NR" expr="pin_nr"/>
+                <assign name="PIN_NR" expr="nummer"/>
             </filled>
         </field>
 				
