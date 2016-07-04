@@ -65,9 +65,10 @@ database.connect()
     app.use('/:api/', router.validateSessionID);
     app.use('/:api/course', router.course);
     app.use('/:api/mensa', router.mensa);
-    //app.use('/:api/:sessionID/xml', router.xml);
     app.use('/:api/authenticate', router.authenticate);
+    app.use('/:api/goodby', router.goodby);
     app.use('/:api/test', router.test);
+    //app.use('/:api/:sessionID/xml', router.xml);
 
 
     // Start the HTTP-server
